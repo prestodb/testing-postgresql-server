@@ -13,7 +13,7 @@
  */
 package io.airlift.testing.postgresql;
 
-import io.airlift.log.Logger;
+import com.facebook.airlift.log.Logger;
 
 import java.io.Closeable;
 import java.io.IOException;
