@@ -13,11 +13,11 @@
  */
 package io.airlift.testing.postgresql;
 
+import com.facebook.airlift.log.Logger;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.io.ByteStreams;
 import io.airlift.command.Command;
 import io.airlift.command.CommandFailedException;
-import io.airlift.log.Logger;
 import io.airlift.units.Duration;
 
 import java.io.Closeable;
@@ -41,13 +41,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import static com.facebook.airlift.concurrent.Threads.daemonThreadsNamed;
 import static com.google.common.base.MoreObjects.toStringHelper;
 import static com.google.common.base.StandardSystemProperty.OS_ARCH;
 import static com.google.common.base.StandardSystemProperty.OS_NAME;
 import static com.google.common.collect.Lists.newArrayList;
 import static com.google.common.io.MoreFiles.deleteRecursively;
 import static com.google.common.io.RecursiveDeleteOption.ALLOW_INSECURE;
-import static io.airlift.concurrent.Threads.daemonThreadsNamed;
 import static java.lang.String.format;
 import static java.nio.file.Files.copy;
 import static java.nio.file.Files.createTempDirectory;
